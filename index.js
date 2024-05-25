@@ -19,7 +19,7 @@ bot.on('message', async (msg) => {
         await bot.sendMessage(chatId, 'Ниже появится кнопка, заполни форму', {
             reply_markup: {
                 keyboard: [
-                    [{text: 'Заполнить форму', web_app: {url: webAppUrl}}]
+                    [{text: 'Заполнить форму', web_app: {url: webAppUrl + 'form'}}]
                 ]
             }
         })
@@ -67,6 +67,6 @@ app.post('/web-data', async (req, res) => {
     }
 })
 
-const PORT = 8000;
+const PORT = 8001;
 
 app.listen(PORT, () => console.log('server started on PORT ' + PORT))
